@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="examples-main.css">
+        <title>Personal Portfolio</title>
+    </head>
+
+    <body>
+
+        <header id="top">
+            <div class="container">
+
+                <img id="hero-img" src="images/orange-purple-bckgrnd.png" alt="Orange and Purple Background Pattern">
+
+                <div class="main-title-header">
+                    <h1 id="title-h1" class="main-title">Coding Examples</h1>
+                </div>
+
+                <div>
+                    <a id="down-prompt" class="scroll-prompt" href="#bottom">Scroll Down</a>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Sidebar Navigation Menu -->
+        <div class="sidebar-nav">
+            
+            <a id="initials" href="index.html">T</a> <!-- Link to Home Page -->
+
+            <!-- Main Navigation in Sidebar -->
+            <div class="main-nav">
+                <a class="nav-link" href="about.html">About Me</a>
+                <a class="nav-link" href="index.html#portfolio">My Portfolio</a>
+                <a class="nav-link" href="examples.html">Coding Examples</a>
+                <a class="nav-link" href="scheme.html">SCS Scheme</a>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="contact">
+                <div class="contact-nav">
+                    <a href="index.html#form">Contact Me</a>
+                </div>
+
+                <!-- Social Media Links -->
+                <div class="socials">
+                    <a id="icon-fb" class="social-link" href="#"></a>
+                    <a id="icon-ig" class="social-link" href="#"></a>
+                    <a id="icon-tw" class="social-link" href="#"></a>
+                    <a id="icon-in" class="social-link" href="#"></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Area [Code Examples] -->
+        <div id="bottom" class="main-content">
+            <h3 class="snippet-h">Example 1: HTML</h3>
+
+            <div class="code-snippet">
+
+                <pre><code>
+&lt;!-- Contact Form and Information --&gt;
+&lt;form id="bottom" class="contact-form"&gt;
+
+    &lt;div class="contactF-left info"&gt;
+        &lt;h2&gt;Get In Touch&lt;/h2&gt;
+        &lt;p&gt;Whether you'd like to learn more about my work, discuss web development, or simply get in touch, I'd be happy to hear from you. Feel free to send a message using the form.&lt;/p&gt;
+        &lt;br&gt;
+        &lt;h3 id="phone-number"&gt;07807 807807&lt;/h3&gt; &lt;!-- Example Contacts --&gt;
+        &lt;h4&gt;info@netmatters-scs.com&lt;/h4&gt;
+        &lt;br&gt;
+        &lt;p&gt;Thank you for taking the time to visit my portfolio! I'm always happy to connect with new people, share ideas and talk about web development. Don't hesitate to drop me a message!&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;div class="contactF-right form"&gt;
+
+        &lt;div class="input-form"&gt;
+            &lt;input id="first-name" class="form-input" type="text" placeholder="First Name*"&gt;
+            &lt;input id="last-name" class="form-input" type="text" placeholder="Last Name*"&gt;
+            &lt;input id="email" class="form-input" type="email" placeholder="Email Address*"&gt;
+            &lt;input id="subject" class="form-input" type="text" placeholder="Subject"&gt;
+            &lt;textarea id="message" class="form-input" placeholder="Message"&gt;&lt;/textarea&gt;
+            &lt;button id="submit-btn" type="submit"&gt;Submit&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/form&gt;
+                </code></pre>
+                <p class="snippet-p">Here in this example is HTML code of a form area and extra information, with the corret CSS, beside it.</p>
+            </div>
+
+            <h3 class="snippet-h">Example 2: CSS</h3>
+
+            <div class="code-snippet">
+
+                <pre><code>
+.project-image {
+    border-radius: 3px;
+    width: 100%;
+    aspect-ratio: 1.2 / 1;
+    object-fit: cover;
+    position: relative;
+    transition: filter 0.2s ease;
+
+    &:hover {
+        filter: brightness(0.75);
+    }
+
+    &:active {
+        filter: brightness(0.75);
+    }
+}
+                </code></pre>
+                <p class="snippet-p">Here in this example is CSS code of an image scaled with aspect ratio, curved edges and a nice animation when hovered on and clicked.</p>
+            </div>
+
+            <h3 class="snippet-h">Example 3: SCSS</h3>
+
+            <div class="code-snippet">
+
+                <pre><code>
+//&lt;---- Mixins ----&gt;\\
+
+@mixin font-basic($family) {
+    font-family: $family;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
+//&lt;---- CSS Code for the Main Content of the Page ----&gt;\\
+
+@import 'mixins.scss',
+        'variables.scss',
+        'header.scss',
+        'sidebar.scss',
+        'form.scss';
+
+@font-face {
+    @include font-basic('Poppins');
+    src: url(fonts/Poppins/poppins-v15-latin-regular.woff2) format("woff2");
+}
+
+@font-face {
+    @include font-basic('icomoon');
+    src: url(../fonts/Icomoon/icomoon.ttf) format("truetype"),
+        url(../fonts/Icomoon/icomoon.woff) format("woff");
+}
+                </code></pre>
+                <p class="snippet-p">Here in this example is SCSS code of the use of mixins and include functions. They allow code to become tidier and easier to read and edit, it also helps developers to stop repeating code as they can use a mixin instead.</p>
+            </div>
+
+        </div>
+        
+        <footer class="back-div">
+            <a id="back-prompt" class="scroll-prompt-back" href="#top">Back To Top</a>
+        </footer>
+    </body>
+</html>

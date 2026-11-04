@@ -1,0 +1,15 @@
+//<---- Mixins ---->\\
+
+@mixin font-basic($family) {
+    font-family: $family;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
+@mixin icon($ref) {
+    font-family: 'icomoon';
+    font-size: 15px;
+    padding-right: 5px;
+    content: $ref;
+}

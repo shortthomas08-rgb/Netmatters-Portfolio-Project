@@ -1,0 +1,321 @@
+header {
+  grid-area: header;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+#hero-img {
+  width: 100%;
+  display: block;
+}
+
+.main-title-header {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  z-index: 2;
+}
+
+.main-title {
+  font-weight: 600;
+  font-size: 32px;
+  color: #fff;
+}
+
+#title-h3 {
+  font-weight: normal;
+  font-size: 22px;
+  padding-top: 20px;
+}
+
+.scroll-prompt {
+  position: absolute;
+  bottom: 75px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #fff;
+  z-index: 2;
+}
+
+#down-prompt::before {
+  font-family: "icomoon";
+  font-size: 15px;
+  padding-right: 5px;
+  content: "\e901";
+  display: block;
+  text-align: center;
+  margin-bottom: -38px;
+}
+
+.sidebar-nav {
+  display: inline-block;
+  position: sticky;
+  border: 1px solid #6c3baa;
+  text-align: center;
+  grid-area: sidebar;
+  padding: 15px;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+}
+
+.main-nav {
+  display: grid;
+  grid-template-columns: 1fr;
+  font-size: 13px;
+}
+
+.nav-link {
+  padding: 10px 0;
+  font-weight: 600;
+  white-space: nowrap;
+  color: #000;
+}
+.nav-link:hover {
+  -webkit-text-decoration: underline #6c3baa;
+          text-decoration: underline #6c3baa;
+  text-underline-offset: 8px;
+}
+
+#initials {
+  display: block;
+  margin: -15px -15px 50px -15px;
+  padding: 15px;
+  font-size: 64px;
+  border-block: 1px solid #6c3baa;
+  color: #6c3baa;
+}
+
+.contact {
+  margin-top: 15px;
+}
+
+.contact-nav {
+  border-block: 1px solid #6c3baa;
+  font-weight: 900;
+  margin: 15px -15px;
+}
+.contact-nav a {
+  color: #000;
+  font-size: 13px;
+}
+
+.contact-form {
+  grid-area: form;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 25px;
+}
+.contact-form h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+.contact-form h4 {
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+.contact-form #phone-number {
+  font-size: 15px;
+}
+
+.contactF-left {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin: 0 25px;
+  font-size: 12px;
+}
+
+.contactF-right {
+  flex: 1;
+  min-width: 0;
+}
+
+.input-form {
+  display: grid;
+  width: 100%;
+  max-width: 600px;
+  min-width: 0;
+  box-sizing: border-box;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-areas: "first last" "email email" "subject subject" "message message";
+  gap: 10px;
+}
+
+.form-input {
+  background-color: #d9dbdd;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+#first-name {
+  grid-area: first;
+}
+
+#last-name {
+  grid-area: last;
+}
+
+#email {
+  grid-area: email;
+}
+
+#subject {
+  grid-area: subject;
+}
+
+#message {
+  grid-area: message;
+  text-align: left;
+  min-height: 100px;
+}
+
+#submit-btn {
+  background-color: #fff;
+  color: #000;
+  padding: 5px;
+  width: 150px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/Poppins/poppins-v15-latin-regular.woff2) format("woff2");
+}
+@font-face {
+  font-family: "icomoon";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/Icomoon/icomoon.ttf) format("truetype"), url(../fonts/Icomoon/icomoon.woff) format("woff");
+}
+* {
+  font-family: "Poppins";
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: "sidebar header" "sidebar main" "sidebar form" "sidebar footer";
+}
+
+.main-content {
+  grid-area: main;
+  margin: 50px 25px;
+}
+.main-content p {
+  margin: 25px 0;
+}
+
+.project-image {
+  border-radius: 3px;
+  width: 100%;
+  aspect-ratio: 1.2/1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: relative;
+  transition: filter 0.2s ease;
+}
+.project-image:hover {
+  filter: brightness(0.75);
+}
+.project-image:active {
+  filter: brightness(0.75);
+}
+
+.project-title {
+  font-weight: 600;
+  font-size: 22px;
+  padding-top: 10px;
+}
+
+.project-view-link {
+  font-size: 14px;
+  padding-top: 5px;
+  color: #000;
+}
+
+#title-h3 {
+  font-weight: normal;
+  font-size: 22px;
+  padding-top: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #6c3baa;
+}
+
+#icon-fb::before {
+  font-family: "icomoon";
+  font-size: 15px;
+  padding-right: 5px;
+  content: "\ea90";
+}
+
+#icon-ig::before {
+  font-family: "icomoon";
+  font-size: 15px;
+  padding-right: 5px;
+  content: "\ea92";
+}
+
+#icon-tw::before {
+  font-family: "icomoon";
+  font-size: 15px;
+  padding-right: 5px;
+  content: "\ea96";
+}
+
+#icon-in::before {
+  font-family: "icomoon";
+  font-size: 15px;
+  padding-right: 5px;
+  content: "\eaca";
+}
+
+.back-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.scroll-prompt-back {
+  position: static;
+  right: auto;
+  transform: none;
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+}
+
+#back-prompt::before {
+  font-family: "icomoon";
+  font-size: 15px;
+  padding-right: 5px;
+  content: "\e900";
+  display: block;
+  text-align: center;
+}/*# sourceMappingURL=about-main.css.map */

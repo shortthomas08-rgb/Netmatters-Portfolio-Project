@@ -1,0 +1,54 @@
+//<---- CSS Code for the Header of the Page ---->\\
+
+header {
+    grid-area: header;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+}
+
+#hero-img {
+    width: 100%;
+    display: block;
+}
+
+.main-title-header {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+}
+
+.main-title {
+    font-weight: 600;
+    font-size: 32px;
+    color: $white;
+}
+
+#title-h3 {
+    font-weight: normal;
+    font-size: 22px;
+    padding-top: 20px;
+}
+
+.scroll-prompt {
+    position: absolute;
+    bottom: 75px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: $white;
+    z-index: 2;
+}
+
+#down-prompt::before {
+    @include icon('\e901');
+    display: block;
+    text-align: center;
+    margin-bottom: -38px;
+}

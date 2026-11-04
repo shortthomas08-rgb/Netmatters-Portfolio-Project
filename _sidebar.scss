@@ -1,0 +1,53 @@
+//<---- CSS Code for the Sidebar ---->\\
+
+.sidebar-nav {
+    display: inline-block;
+    position: sticky;
+    border: 1px solid $royal-purple;
+    text-align: center;
+    grid-area: sidebar;
+    padding: 15px;
+    max-width: fit-content;
+}
+
+.main-nav {
+    display: grid;
+    grid-template-columns: 1fr;
+    font-size: 13px;
+}
+
+.nav-link {
+    padding: 10px 0;
+    font-weight: 600;
+    white-space: nowrap;
+    color: $black;
+
+    &:hover {
+        text-decoration: underline $royal-purple;
+        text-underline-offset: 8px;
+    }
+}
+
+#initials {
+    display: block;
+    margin: -15px -15px 50px -15px;
+    padding: 15px;
+    font-size: 64px;
+    border-block: 1px solid $royal-purple;
+    color: $royal-purple;
+}
+
+.contact {
+    margin-top: 15px;
+}
+
+.contact-nav {
+    border-block: 1px solid $royal-purple;
+    font-weight: 900;
+    margin: 15px -15px;
+
+    a {
+        color: $black;
+        font-size: 13px;
+    }
+}

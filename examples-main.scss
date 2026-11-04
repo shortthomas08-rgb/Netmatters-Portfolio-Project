@@ -1,0 +1,148 @@
+//<---- CSS Code for the Main Content of the Page ---->\\
+
+@import 'mixins.scss',
+        'variables.scss',
+        'header.scss',
+        'sidebar.scss',
+        'form.scss';
+
+@font-face {
+    @include font-basic('Poppins');
+    src: url(fonts/Poppins/poppins-v15-latin-regular.woff2) format("woff2");
+}
+
+@font-face {
+    @include font-basic('icomoon');
+    src: url(../fonts/Icomoon/icomoon.ttf) format("truetype"),
+         url(../fonts/Icomoon/icomoon.woff) format("woff");
+}
+
+* {
+    font-family: 'Poppins';
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 145px;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+        "sidebar header"
+        "sidebar main"
+        "sidebar footer";
+}
+
+.main-content {
+    grid-area: main;
+    margin: 50px 25px;
+}
+
+.project-image {
+    border-radius: 3px;
+    width: 100%;
+    aspect-ratio: 1.2 / 1;
+    object-fit: cover;
+    position: relative;
+    transition: filter 0.2s ease;
+
+    &:hover {
+        filter: brightness(0.75);
+    }
+
+    &:active {
+        filter: brightness(0.75);
+    }
+}
+
+.project-title {
+    font-weight: 600;
+    font-size: 22px;
+    padding-top: 10px;
+}
+
+.project-view-link {
+    font-size: 14px;
+    padding-top: 5px;
+    color: $black;
+}
+
+#title-h3 {
+    font-weight: normal;
+    font-size: 22px;
+    padding-top: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: $royal-purple;
+}
+
+#icon-fb::before {
+    @include icon('\ea90');
+}
+
+#icon-ig::before {
+    @include icon('\ea92');
+}
+
+#icon-tw::before {
+    @include icon('\ea96');
+}
+
+#icon-in::before {
+    @include icon('\eaca');
+}
+
+.back-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.scroll-prompt-back {
+    position: static;
+    right: auto;
+    transform: none;
+    text-align: center;
+    text-decoration: none;
+    color: $black;
+}
+
+#back-prompt::before {
+    @include icon('\e900');
+    display: block;
+    text-align: center;
+}
+
+pre {
+    background-color: #1e2023;
+    color: #e6e6e6;
+    border: 1px solid #34373b;
+    border-left: 3px solid #ffb30e;
+    border-radius: 8px;
+    overflow-x: auto;
+    white-space: pre;
+    padding: 16px 20px;
+    line-height: 1.6;
+    box-shadow: 0 4px 12px rbga(0, 0, 0, 0.2);
+}
+
+code {
+    font-family: monospace;
+    font-size: 14px;
+}
+
+.snippet-h {
+    padding: 0 0 10px 0;
+}
+
+.snippet-p {
+    margin: 10px 0 75px 0;
+}
