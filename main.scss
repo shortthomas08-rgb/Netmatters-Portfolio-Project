@@ -13,8 +13,8 @@
 
 @font-face {
     @include font-basic('icomoon');
-    src: url(../fonts/Icomoon/icomoon.ttf) format("truetype"),
-         url(../fonts/Icomoon/icomoon.woff) format("woff");
+    src: url("./fonts/Icomoon/icomoon.ttf") format("truetype"),
+         url("./fonts/Icomoon/icomoon.woff") format("woff");
 }
 
 * {
