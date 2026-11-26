@@ -24,14 +24,15 @@
 
 html {
     scroll-behavior: smooth;
+    font-size: 18px;
 }
 
 body {
     display: grid;
     min-height: 100vh;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr auto;
-    grid-template-areas: 
+    grid-template-columns: max-content minmax(0, 1fr);
+    grid-template-rows: auto 1fr auto auto;
+    grid-template-areas:
         "sidebar header"
         "sidebar main"
         "sidebar form"
@@ -79,6 +80,8 @@ body {
     font-weight: normal;
     font-size: 22px;
     padding-top: 20px;
+    min-height: 30px;
+    line-height: 30px;
 }
 
 a {
@@ -123,4 +126,22 @@ a {
     @include icon('\e900');
     display: block;
     text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+
+    body {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:
+            "header"
+            "main"
+            "form"
+            "footer";
+    }
+
+    .main-content {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin: 30px 15px;
+    }
+
 }

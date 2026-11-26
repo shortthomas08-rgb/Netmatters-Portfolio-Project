@@ -29,11 +29,12 @@ html {
 body {
     display: grid;
     min-height: 100vh;
-    grid-template-columns: 145px;
-    grid-template-rows: auto 1fr auto;
-    grid-template-areas: 
+    grid-template-columns: max-content minmax(0, 1fr);
+    grid-template-rows: auto 1fr auto auto;
+    grid-template-areas:
         "sidebar header"
         "sidebar main"
+        "sidebar form"
         "sidebar footer";
 }
 
@@ -145,4 +146,22 @@ code {
 
 .snippet-p {
     margin: 10px 0 75px 0;
+}
+
+@media screen and (max-width: 768px) {
+
+    body {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:
+            "header"
+            "main"
+            "form"
+            "footer";
+    }
+
+    .main-content {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin: 30px 15px;
+    }
+
 }

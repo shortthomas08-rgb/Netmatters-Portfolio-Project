@@ -54,6 +54,44 @@ header {
   margin-bottom: -38px;
 }
 
+@media screen and (max-width: 768px) {
+  .container {
+    position: relative;
+    width: 100%;
+  }
+  #hero-img {
+    width: 100%;
+    height: 350px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center;
+    display: block;
+  }
+  .main-title-header {
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% - 30px);
+    text-align: center;
+  }
+  .main-title {
+    font-size: clamp(24px, 7vw, 28px);
+    line-height: 1.2;
+    margin: 0;
+  }
+  #title-h3 {
+    font-size: 17px;
+    padding-top: 5px;
+    margin: 0;
+  }
+  .scroll-prompt {
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+  }
+}
 .sidebar-nav {
   display: inline-block;
   position: sticky;
@@ -106,6 +144,64 @@ header {
   font-size: 13px;
 }
 
+.menu-toggle {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 5px;
+    left: 5px;
+    z-index: 1002;
+    width: 36px;
+    height: 36px;
+    background: #fff;
+    color: #6c3baa;
+    border: 1px solid #6c3baa;
+    border-radius: 0;
+    font-size: 20px;
+    padding: 0;
+    cursor: pointer;
+    box-shadow: none;
+  }
+  .sidebar-nav {
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 250px;
+    height: auto;
+    min-height: 100vh;
+    min-height: 100dvh;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: #fff;
+    z-index: 1000;
+    padding: 65px 15px 30px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    -webkit-overflow-scrolling: touch;
+  }
+  .sidebar-nav.active {
+    transform: translateX(0);
+  }
+}
+@media screen and (min-width: 769px) {
+  .sidebar-nav {
+    display: inline-block;
+    position: sticky;
+    top: 0;
+    width: 170px;
+    max-width: none;
+    box-sizing: border-box;
+  }
+}
 .contact-form {
   grid-area: form;
   display: flex;
@@ -136,6 +232,8 @@ header {
 .contactF-right {
   flex: 1;
   min-width: 0;
+  padding-right: 25px;
+  box-sizing: border-box;
 }
 
 .input-form {
@@ -145,16 +243,8 @@ header {
   min-width: 0;
   box-sizing: border-box;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-template-areas: "first last" "email email" "subject subject" "message message";
+  grid-template-areas: "first last" "email email" "phone phone" "subject subject" "message message";
   gap: 10px;
-}
-
-.form-input {
-  background-color: #d9dbdd;
-  margin-bottom: 10px;
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
 }
 
 #first-name {
@@ -169,14 +259,21 @@ header {
   grid-area: email;
 }
 
+#phone {
+  grid-area: phone;
+}
+
 #subject {
   grid-area: subject;
 }
 
 #message {
   grid-area: message;
-  text-align: left;
-  min-height: 100px;
+}
+
+#form-feedback {
+  grid-column: 1/-1;
+  font-size: 14px;
 }
 
 #submit-btn {
@@ -186,6 +283,33 @@ header {
   width: 150px;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.form-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  border: 1px solid #6c3baa;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+textarea.form-input {
+  min-height: 120px;
+  resize: vertical;
+}
+
+#submit-btn {
+  background-color: #6c3baa;
+  color: #fff;
+  padding: 10px 20px;
+  width: 150px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#submit-btn:hover {
+  opacity: 0.85;
 }
 
 @font-face {
@@ -214,8 +338,8 @@ html {
 body {
   display: grid;
   min-height: 100vh;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr auto;
+  grid-template-columns: max-content minmax(0, 1fr);
+  grid-template-rows: auto 1fr auto auto;
   grid-template-areas: "sidebar header" "sidebar main" "sidebar form" "sidebar footer";
 }
 
@@ -327,4 +451,15 @@ a {
   content: "\e900";
   display: block;
   text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "header" "main" "form" "footer";
+  }
+  .main-content {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: 30px 15px;
+  }
 }/*# sourceMappingURL=scheme-main.css.map */

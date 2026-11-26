@@ -2,7 +2,8 @@
 
 <html>
     <head>
-        <link rel="stylesheet" href="main.css"> <!-- SCROLL DOWN DOES NOT WORK ON OTHER PAGES ON ABT AND EXMPLEz-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="main.css">
         <title>Personal Portfolio</title>
     </head>
 
@@ -15,7 +16,7 @@
 
                 <div class="main-title-header">
                     <h1 id="title-h1" class="main-title">My Name is Thomas Short</h1>
-                    <h3 id="title-h3" class="main-title">I'm a Web Developer</h3>
+                    <h3 id="title-h3" class="main-title"></h3>
                 </div>
 
                 <div>
@@ -23,11 +24,14 @@
                 </div>
             </div>
         </header>
+
+        <!-- Mobile Menu Button -->
+        <button id="menu-toggle" class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false">&#9776;</button>
         
         <!-- Sidebar Navigation Menu -->
-        <div class="sidebar-nav">
+        <div id="sidebar-nav" class="sidebar-nav">
             
-            <a id="initials" href="index.html">T</a> <!-- Link to Home Page -->
+            <a id="initials" href="index.html">T</a>
 
             <!-- Main Navigation in Sidebar -->
             <div class="main-nav">
@@ -119,7 +123,10 @@
         </div>
 
         <!-- Contact Form and Information -->
-        <form id="form" class="contact-form">
+        <form id="form" class="contact-form" action="https://formsubmit.co/thomas.short@netmatters-scs.com" method="POST" novalidate>
+
+            <input type="hidden" name="_subject" value="New Portfolio Contact Form Submission">
+            <input type="hidden" name="_captcha" value="true">
 
             <div class="contactF-left info">
                 <h2>Get In Touch</h2>
@@ -134,22 +141,28 @@
             <div class="contactF-right form">
 
                 <div class="input-form">
-                    <input id="first-name" class="form-input" type="text" placeholder="First Name*" required>
+                    <input id="first-name" class="form-input" name="first_name" type="text" placeholder="First Name*" required>
 
-                    <input id="last-name" class="form-input" type="text" placeholder="Last Name*" required>
+                    <input id="last-name" class="form-input" name="last_name" type="text" placeholder="Last Name*" required>
 
-                    <input id="email" class="form-input" type="email" placeholder="Email Address*" required>
+                    <input id="email" class="form-input" name="email" type="email" placeholder="Email Address*" required>
 
-                    <input id="subject" class="form-input" type="text" placeholder="Subject">
+                    <input id="phone" class="form-input" name="phone" type="tel" placeholder="Phone Number*" required>
 
-                    <textarea id="message" class="form-input" placeholder="Message"></textarea>
+                    <input id="subject" class="form-input" name="subject" type="text" placeholder="Subject">
+
+                    <textarea id="message" class="form-input" name="message" placeholder="Message"></textarea>
 
                     <button id="submit-btn" type="submit">Submit</button>
+
+                    <p id="form-feedback" role="status" aria-live="polite"></p>
                 </div>
             </div>
         </form>
         <footer class="back-div">
             <a id="back-prompt" class="scroll-prompt-back" href="#top">Back To Top</a>
         </footer>
+
+        <script src="script.js"></script>
     </body>
 </html>

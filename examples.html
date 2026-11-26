@@ -2,6 +2,7 @@
 
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="examples-main.css">
         <title>Personal Portfolio</title>
     </head>
@@ -23,8 +24,11 @@
             </div>
         </header>
         
+        <!-- Mobile Menu Button -->
+        <button id="menu-toggle" class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false">&#9776;</button>
+        
         <!-- Sidebar Navigation Menu -->
-        <div class="sidebar-nav">
+        <div id="sidebar-nav" class="sidebar-nav">
             
             <a id="initials" href="index.html">T</a> <!-- Link to Home Page -->
 
@@ -154,5 +158,7 @@
         <footer class="back-div">
             <a id="back-prompt" class="scroll-prompt-back" href="#top">Back To Top</a>
         </footer>
+
+        <script src="script.js"></script>
     </body>
 </html>
